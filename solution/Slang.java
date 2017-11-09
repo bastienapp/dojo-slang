@@ -24,6 +24,19 @@ class Slang {
 		}
 		return result;
 	}
+	
+	public static String convertJoin(String entree) {
+		String[] parts = entree.split(" ");
+		for (int i = 0; i < parts.length; i++){
+			if (parts[i].length() >= 6){
+				String first = parts[i].substring(0, parts[i].length() / 2);  
+				String second = parts[i].substring(parts[i].length() / 2);
+				parts[i] = second + first;
+			}
+
+		}
+		return String.join(" ", parts);
+	}
 
 	public String convertHard(String text) {
 		String result = "";
